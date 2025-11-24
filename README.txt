@@ -1,7 +1,38 @@
-1. I compiled my code by running mkdir build, cd build, cmake .., and make. I reran make each time with edits and
-had to go into my build folder to run ./assignment5 I tested with MacOS.
-2. The OpenGL online textbook and API references were really helpful to find the correct syntax and explanations
-3. There were some warnings with security concerns and to use sprintf, but the code still worked. Additionally, I had to 
-redo the cmake after creating a new shader.
-4. I completed the percentage closer filtering and had a boolean texture/plain color flag to corresponding shading component.
-5. This was such a fun project and being an architecure major, it's cool to see how shadows and textures are mapped to objects.
+This project implements real-time shadow mapping in OpenGL, covering depth-map generation, shadow rendering, and common artifacts like shadow acne and Peter Panning. It follows a basic graphics pipeline and demonstrates how light-space depth information is used to determine fragment visibility.
+
+**Features**
+- Depth map generation from the light’s perspective  
+- Shadow mapping using a depth comparison  
+- Basic scene rendering with shadow application  
+- Adjustable light direction and camera view  
+- Handles common artifacts (shadow acne, Peter Panning)
+
+**How to Run**
+1. Clone the repository  
+2. Build using CMake  
+3. Run the executable from your build directory  
+4. Use the mouse/keyboard to move the camera and adjust lighting
+
+**Project Structure**
+- src/: main rendering logic  
+- shaders/: vertex + fragment shaders for depth and shadow passes  
+- includes/: utilities for shader compilation and camera control  
+- resources/: geometry + textures (if used)
+
+**Dependencies**
+- OpenGL 3.3+  
+- GLFW  
+- GLAD  
+- glm math library  
+- CMake
+
+**Controls**
+- WASD → move camera  
+- Mouse → look around  
+- Q/E → raise or lower the light  
+- R → reset camera  
+
+**Future Improvements**
+- Soft shadows (PCF)  
+- Cascaded shadow maps  
+- Point-light shadow mapping (cubemap shadows)
